@@ -1,9 +1,10 @@
 module chord(
     input [15:0] chord_data,
-    output [15:0] freq1,freq2,freq3,freq4
+    output logic [15:0] freq1,freq2,freq3,freq4
 );
 reg [15:0] freq;
 always_comb begin
+    freq1,freq2,freq3,freq4=0;
     if (~chord_data[14]) begin
         case(chord_data[13:9])
             5'b00000:begin
@@ -150,6 +151,13 @@ always_comb begin
                 freq3=16'd739;//f#5
                 freq4=16'd247;//b3
             end
+            default:
+                begin
+                    freq1=0;
+                    freq2=0;
+                    freq3=0;
+                    freq4=0;
+                end
         endcase
     end
 end
