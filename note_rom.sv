@@ -4,8 +4,6 @@ module note(
 );
 reg [15:0] freq;
 always_comb begin
-if(chord_data[14])
-begin
     case(chord_data[13:9])
         5'b00000: freq = 16'd130; // C3
         5'b00001: freq = 16'd138; // C#3
@@ -41,13 +39,18 @@ begin
         5'b11111: freq = 16'd783; // G5
     endcase
 end
-end
-if(chord_data[15])begin
-    case(chord_data[1:0])
-        2'b00: freq1 = freq; // 1st osscillator
-        2'b01: freq2 = freq; // 2nd osscillator
-        2'b10: ampl3 = freq // 3rd osscillator
-        2'b11: ampl4 = freq; // 4th osscillator
-    endcase
+always_ff @(posedge clk or posedge rst) begin
+    if(rst)begin
+        freq1<=0;
+        freq2<=0;
+        freq3<=0;
+        freq4<=0;
+    end
+    else if(chord_data[14])begin
+        freq1<=freq;
+        freq2<=freq;
+        freq3<=freq;
+        freq4<=freq;
+    end
 end
 endmodule
