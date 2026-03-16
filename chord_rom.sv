@@ -1,0 +1,159 @@
+module chord(
+    input [15:0] chord_data,
+    output [15:0] freq1,freq2,freq3,freq4
+);
+reg [15:0] freq;
+always_comb begin
+    if (~chord_data[14]) begin
+        case(chord_data[13:9])
+            5'b00000:begin
+                freq1=16'd261;//c4
+                freq2=16'd329;//E4
+                freq3=16'd392; // g3
+                freq4=16'd130; // C3
+            end
+            5'b00001:begin
+                freq1=16'd261;//c4
+                freq2=16'd311;//d#4
+                freq3=16'd392; //g4
+                freq4=16'd131; //C3
+            end
+            5'b00010:begin
+                freq1=16'd277;//c#4
+                freq2=16'd349;//f4
+                freq3=16'd415; //g#4
+                freq4=16'd139; //c#3
+            end
+            5'b00011:begin
+                freq1=16'd277;//c#4
+                freq2=16'd329;//e4
+                freq3=16'd415;//g#4
+                freq4=16'd139;//c#3
+            end
+            5'b00100:begin
+                freq1=16'd293;//d4
+                freq2=16'd369;//f#4
+                freq3=16'd440;//a4
+                freq4=16'd147;//d3
+            end
+            5'b00101:begin
+                freq1=16'd293;//d4
+                freq2=16'd349;//f4
+                freq3=16'd440;//a4
+                freq4=16'd147;//d3
+            end
+            5'b00110:begin
+                freq1=16'd311;//d#4
+                freq2=16'd392;//g4
+                freq3=16'd466;//a#4
+                freq4=16'd156;//d#3
+            end
+            5'b00111:begin
+                freq1=16'd311;//d#4
+                freq2=16'd369;//f#4
+                freq3=16'd466;//a#4
+                freq4=16'd156;//d#3
+            end
+            5'b01000:begin
+                freq1=16'd329;//e4
+                freq2=16'd415;//g#4
+                freq3=16'd493;//b4
+                freq4=16'd165;//e3
+            end
+            5'b01001:begin
+                freq1=16'd329;//e4
+                freq2=16'd392;//g4
+                freq3=16'd493;//b4
+                freq4=16'd165;//e3
+            end
+            5'b01010:begin
+                freq1=16'd349;//f4
+                freq2=16'd440;//a4
+                freq3=16'd523;//c5
+                freq4=16'd175;//f3
+            end
+            5'b01011:begin
+                freq1=16'd349;//f4
+                freq2=16'd415;//g#4
+                freq3=16'd523;//c5
+                freq4=16'd175;//f3
+            end
+            5'b01100:begin
+                freq1=16'd369;//f#4
+                freq2=16'd466;//a#4
+                freq3=16'd554;//c#5
+                freq4=16'd185;//f#3
+            end
+            5'b01101:begin
+                freq1=16'd369;//f#4
+                freq2=16'd440;//a4
+                freq3=16'd554;//c#5
+                freq4=16'd185;//f#3
+            end
+            5'b01110:begin
+                freq1=16'd392;//g4
+                freq2=16'd493;//b4
+                freq3=16'd587;//d5
+                freq4=16'd196;//g3
+            end
+            5'b01111:begin
+                freq1=16'd392;//g4
+                freq2=16'd466;//a#4
+                freq3=16'd587;//d5
+                freq4=16'd196;//g3
+            end
+            5'b10000:begin
+                freq1=16'd415;//g#4
+                freq2=16'd523;//c5
+                freq3=16'd622;//d#5
+                freq4=16'd208;//g#3
+            end
+            5'b10001:begin
+                freq1=16'd415;//g#4
+                freq2=16'd493;//b4
+                freq3=16'd622;//d#5
+                freq4=16'd208;//g#3
+            end
+            5'b10010:begin
+                freq1=16'd440;//a4
+                freq2=16'd554;//c#5
+                freq3=16'd659;//e5
+                freq4=16'd220;//a3
+            end
+            5'b10011:begin
+                freq1=16'd440;//a4
+                freq2=16'd261;//c4
+                freq3=16'd659;//e5
+                freq4=16'd220;//a3
+            end
+            5'b10100:begin
+                freq1=16'd466;//a#4
+                freq2=16'd587;//d5
+                freq3=16'd698;//f5
+                freq4=16'd233;//a#3
+            end
+            5'b10101:begin
+                freq1=16'd466;//a#4
+                freq2=16'd554;//c#5
+                freq3=16'd698;//f5
+                freq4=16'd233;//a#3
+            end
+            5'b10110:begin
+                freq1=16'd493;//b4
+                freq2=16'd622;//d#5
+                freq3=16'd739;//f#5
+                freq4=16'd247;//b3
+            end
+            5'b10111:begin
+                freq1=16'd493;//b4
+                freq2=16'd587;//d5
+                freq3=16'd739;//f#5
+                freq4=16'd247;//b3
+            end
+        endcase
+    end
+end
+
+
+
+endmodule
