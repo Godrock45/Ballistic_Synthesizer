@@ -1,9 +1,10 @@
 module wavegen(
     input clk,
     input rst,
+    input [4:0] effect_op,
     input [15:0] freq1,
     input [15:0] ampl,
-    input [2:0] wave_type, 
+    input [1:0] wave_type, 
     output reg [15:0] wave_out
 );
 logic [31:0] phase_acc;
@@ -17,10 +18,10 @@ always_ff @(posedge clk or posedge rst) begin
     end else begin
         phase_acc <= phase_acc + freq1; // Increment phase accumulator by frequency
         case (wave_type)
-            3'b000: raw_sample <= (phase_acc[31]) ? 16'hFFFF : 16'h0000; // Square wave
-            3'b001: raw_sample <= phase_acc[31:16]; // Sawtooth wave
-            3'b010: raw_sample <= (phase_acc[31]) ? (~phase_acc[30:15]):(phase_acc[30:15]); // Triangle wave
-            3'b011: raw_sample <= sine_lut_value; // Sine wave
+            2'b00: raw_sample <= (phase_acc[31]) ? 16'hFFFF : 16'h0000; // Square wave
+            2'b01: raw_sample <= phase_acc[31:16]; // Sawtooth wave
+            2'b10: raw_sample <= (phase_acc[31]) ? (~phase_acc[30:15]):(phase_acc[30:15]); // Triangle wave
+            2'b11: raw_sample <= sine_lut_value; // Sine wave
             default: raw_sample <= 0;
         endcase
     end

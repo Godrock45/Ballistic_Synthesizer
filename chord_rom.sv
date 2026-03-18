@@ -1,12 +1,13 @@
 module chord(
-    input [15:0] chord_data,
+    input [4:0] chord_data,
+    input ena,
     output logic [15:0] freq1,freq2,freq3,freq4
 );
 reg [15:0] freq;
 always_comb begin
     freq1,freq2,freq3,freq4=0;
-    if (~chord_data[14]) begin
-        case(chord_data[13:9])
+    if (ena) begin
+        case(chord_data)
             5'b00000:begin
                 freq1=16'd261;//c4
                 freq2=16'd329;//E4
