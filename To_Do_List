@@ -1,0 +1,9 @@
+✗ Fix syntax errors in note_rom.sv, oscillator.sv, control.sv, instruct_rom.sv
+✗ Create top-level module (top.sv)
+✗ Add clock divider for audio sample rate
+✗ Add DAC output driver (PWM or I2S)
+✗ Create .xdc constraints file with pin mappings
+✗ Create Vivado project and configure
+✗ Create testbench to verify functionality
+✗ Synthesize and implement
+✗ Program FPGA
