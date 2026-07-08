@@ -1,9 +1,13 @@
 module note(
+    input clk,
+    input rst,
+    input ena,
     input [4:0] chord_data,
-    output [15:0] freq1,freq2,freq3,freq4,
+    output logic [15:0] freq1,freq2,freq3,freq4
 );
 reg [15:0] freq;
 always_comb begin
+    freq = 16'b0;
     if(ena)begin
         case(chord_data)
             5'b00000: freq = 16'd130; // C3
@@ -49,7 +53,7 @@ always_ff @(posedge clk or posedge rst) begin
         freq3<=0;
         freq4<=0;
     end
-    else if(chord_data[14])begin
+    else if(ena)begin
         freq1<=freq;
         freq2<=freq;
         freq3<=freq;

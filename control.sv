@@ -1,32 +1,34 @@
-module control(
+module control #(
+    parameter CLK_DIV = 763  // master_clk_hz / 65,536. 50 MHz -> 763, 100 MHz -> 1526, 27 MHz -> 412.
+)(
     input clk,
     input rst
 );
-logic [15:0] IR_wire,IR_reg;
+logic [15:0] tick_count;
+logic        sample_tick;
+logic music_mode_d,music_mode_r,effect_mode_d,effect_mode_r,wave_mode_d,wave_mode_r;
+logic cho_or_no_d,cho_or_no_r,exec_en;
 logic [7:0] PC;
 logic [1:0] voice_select_d,voice_select_r;
 logic [1:0] state,next_state;
-logic [16:0] c_freq1,c_freq2,c_freq3,c_freq4,freq1,freq2,freq3,freq4,n_freq1,n_freq2,n_freq3,n_freq4;
-logic [16:0] ampl1,ampl2,ampl3,ampl4;
 logic [1:0] wave_type1,wave_type2,wave_type3,wave_type4;
-parameter Fetch= 2'b00, Decode= 2'b01, Execute= 2'b10, WaveOut= 2'b11;
-logic music_mode_d,music_mode_r,effect_mode_d,effect_mode_r,wave_mode_d,wave_mode_r;
-logic cho_or_no_d,cho_or_no_r;
-logic [4:0] cho_data_d,cho_data_r;
-logic [15:0] wave_out1,wave_out2,wave_out3,wave_out4;
-logic [15:0] ampl_d,ampl_r;
 logic [1:0]wave_type_d,wave_type_r;
 logic [4:0] effect_op_d,effect_op_r;
 logic [4:0] effect_op_1, effect_op_2, effect_op_3, effect_op_4;
-logic exec_en;
+logic [4:0] cho_data_d,cho_data_r;
+logic [15:0] c_freq1,c_freq2,c_freq3,c_freq4,freq1,freq2,freq3,freq4,n_freq1,n_freq2,n_freq3,n_freq4;
+logic [15:0] ampl1,ampl2,ampl3,ampl4;
+logic [15:0] wave_out1,wave_out2,wave_out3,wave_out4,ampl_d,ampl_r;
+logic [16:0] IR_wire,IR_reg;
+parameter Fetch= 2'b00, Decode= 2'b01, Execute= 2'b10, WaveOut= 2'b11;
 
 instruct_rom ir(.addr(PC), .data(IR_wire));
-note ch(.chord_data(cho_data_r),.ena(~cho_or_no_r), .freq1(n_freq1), .freq2(n_freq2), .freq3(n_freq3), .freq4(n_freq4));
+note ch(.clk(clk),.rst(rst),.chord_data(cho_data_r),.ena(~cho_or_no_r), .freq1(n_freq1), .freq2(n_freq2), .freq3(n_freq3), .freq4(n_freq4));
 chord tf(.chord_data(cho_data_r),.ena(cho_or_no_r), .freq1(c_freq1), .freq2(c_freq2), .freq3(c_freq3), .freq4(c_freq4));
-wavegen w1(.clk(clk),.rst(rst),.effect_op(effect_op_1),.freq1(freq1),.ampl(ampl1),.wave_type(wave_type1),.wave_out(wave_out1));
-wavegen w2(.clk(clk),.rst(rst),.effect_op(effect_op_2),.freq1(freq2),.ampl(ampl2),.wave_type(wave_type2),.wave_out(wave_out2));
-wavegen w3(.clk(clk),.rst(rst),.effect_op(effect_op_3),.freq1(freq3),.ampl(ampl3),.wave_type(wave_type3),.wave_out(wave_out3));
-wavegen w4(.clk(clk),.rst(rst),.effect_op(effect_op_4),.freq1(freq4),.ampl(ampl4),.wave_type(wave_type4),.wave_out(wave_out4));
+wavegen w1(.clk(clk),.rst(rst),.sample_tick(sample_tick),.effect_op(effect_op_1),.freq1(freq1),.ampl(ampl1),.wave_type(wave_type1),.wave_out(wave_out1));
+wavegen w2(.clk(clk),.rst(rst),.sample_tick(sample_tick),.effect_op(effect_op_2),.freq1(freq2),.ampl(ampl2),.wave_type(wave_type2),.wave_out(wave_out2));
+wavegen w3(.clk(clk),.rst(rst),.sample_tick(sample_tick),.effect_op(effect_op_3),.freq1(freq3),.ampl(ampl3),.wave_type(wave_type3),.wave_out(wave_out3));
+wavegen w4(.clk(clk),.rst(rst),.sample_tick(sample_tick),.effect_op(effect_op_4),.freq1(freq4),.ampl(ampl4),.wave_type(wave_type4),.wave_out(wave_out4));
 always_comb begin
     music_mode_d=IR_reg[15];
     wave_mode_d=IR_reg[13]&&~IR_reg[15];
@@ -70,6 +72,20 @@ always_comb begin
 end
 assign exec_en=(state==Execute);
 
+// Audio sample-rate tick: pulses once every CLK_DIV master cycles (~65,536 Hz).
+always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+        tick_count  <= 16'b0;
+        sample_tick <= 1'b0;
+    end else if (tick_count == CLK_DIV - 1) begin
+        tick_count  <= 16'b0;
+        sample_tick <= 1'b1;
+    end else begin
+        tick_count  <= tick_count + 1;
+        sample_tick <= 1'b0;
+    end
+end
+
 always_ff @(posedge clk or posedge rst) begin
     if(rst)begin
         PC<=0;
@@ -80,7 +96,8 @@ always_ff @(posedge clk or posedge rst) begin
         effect_mode_r<=0; cho_or_no_r<=0;
         cho_data_r<=0; voice_select_r<=0;
         wave_type_r<=0; ampl_r<=0; effect_op_1<=0;
-         effect_op_2<=0; effect_op_3<=0; effect_op_4<=0;
+        effect_op_2<=0; effect_op_3<=0; effect_op_4<=0;
+        wave_type1<=0; wave_type2<=0; wave_type3<=0; wave_type4<=0;
         //Oscillator Registers
         freq1<=0;freq2<=0;freq3<=0;freq4<=0;
         ampl1<=0;ampl2<=0;ampl3<=0;ampl4<=0;
@@ -139,10 +156,10 @@ always_ff @(posedge clk or posedge rst) begin
             end
             else if(effect_mode_r)begin
                 case(voice_select_r)
-                    2'b00: effect_op1<=effect_op_r;
-                    2'b01: effect_op2<=effect_op_r;
-                    2'b10: effect_op3<=effect_op_r;
-                    2'b11: effect_op4<=effect_op_r;
+                    2'b00: effect_op_1<=effect_op_r;
+                    2'b01: effect_op_2<=effect_op_r;
+                    2'b10: effect_op_3<=effect_op_r;
+                    2'b11: effect_op_4<=effect_op_r;
                 endcase
             end
         end

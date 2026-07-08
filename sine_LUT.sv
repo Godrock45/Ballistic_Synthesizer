@@ -6,16 +6,15 @@ module sineLUT(
 logic [15:0] lut [0:255];
 
 initial begin
-    lut[0] = 16'h7FFF;
-    lut[1] = 16'h8323;
-    lut[2] = 16'h8646;
-    lut[3] = 16'h8969;
-    lut[4] = 16'h8C8A;
-    lut[5] = 16'h8FAA;
-    lut[6] = 16'h92C6;
-    lut[7] = 16'h95E0;
-    lut[8] = 16'h98F7;
-    lut[9] = 16'h9C0A;
+    lut[1] =  16'h8323;
+    lut[2] =  16'h8646;
+    lut[3] =  16'h8969;
+    lut[4] =  16'h8C8A;
+    lut[5] =  16'h8FAA;
+    lut[6] =  16'h92C6;
+    lut[7] =  16'h95E0;
+    lut[8] =  16'h98F7;
+    lut[9] =  16'h9C0A;
     lut[10] = 16'h9F18;
     lut[11] = 16'hA222;
     lut[12] = 16'hA526;

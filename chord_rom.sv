@@ -5,7 +5,10 @@ module chord(
 );
 reg [15:0] freq;
 always_comb begin
-    freq1,freq2,freq3,freq4=0;
+    freq1=0;
+    freq2=0;
+    freq3=0;
+    freq4=0;
     if (ena) begin
         case(chord_data)
             5'b00000:begin
