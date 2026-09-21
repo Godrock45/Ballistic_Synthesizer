@@ -1,0 +1,78 @@
+{
+  "v2": {
+    "cells": {
+      "LUT4": 3259,
+      "FF": 1214,
+      "CARRY": 199,
+      "MULT18X18": 4,
+      "EBR": 4,
+      "DPRAM": 0
+    },
+    "fmax_mhz": 52.170284271240234,
+    "meets_50mhz": true,
+    "utilization": {
+      "DCCA": {
+        "available": 56,
+        "used": 1
+      },
+      "DP16KD": {
+        "available": 56,
+        "used": 4
+      },
+      "MULT18X18D": {
+        "available": 28,
+        "used": 4
+      },
+      "TRELLIS_COMB": {
+        "available": 24288,
+        "used": 3745
+      },
+      "TRELLIS_FF": {
+        "available": 24288,
+        "used": 1214
+      },
+      "TRELLIS_IO": {
+        "available": 197,
+        "used": 22
+      }
+    }
+  },
+  "v1": {
+    "cells": {
+      "LUT4": 2406,
+      "FF": 355,
+      "CARRY": 114,
+      "MULT18X18": 4,
+      "EBR": 1,
+      "DPRAM": 0
+    },
+    "fmax_mhz": 65.98917388916016,
+    "meets_50mhz": true,
+    "utilization": {
+      "DCCA": {
+        "available": 56,
+        "used": 1
+      },
+      "DP16KD": {
+        "available": 56,
+        "used": 1
+      },
+      "MULT18X18D": {
+        "available": 28,
+        "used": 4
+      },
+      "TRELLIS_COMB": {
+        "available": 24288,
+        "used": 2708
+      },
+      "TRELLIS_FF": {
+        "available": 24288,
+        "used": 355
+      },
+      "TRELLIS_IO": {
+        "available": 197,
+        "used": 19
+      }
+    }
+  }
+}

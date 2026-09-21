@@ -1,0 +1,3 @@
+STATS samples=100799 clocks=3528004 halt_sample=100799 clocks_per_sample=35.000000 dac_density_error=-2.811974e-07 errors=0
+TB PASS
+sim/synth_tb.sv:93: $finish called at 2100004129285 (1ps)

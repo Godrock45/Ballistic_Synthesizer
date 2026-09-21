@@ -1,0 +1,53 @@
+{
+   "creator": "Yosys 0.69 (git sha1 9f75ca1f9, Release, Clang /workspace/YoWASP/yosys/wasi-sdk-33.0-x86_64-linux/share/cmake/../..//bin/clang++ 22.1.0)",
+   "invocation": "stat -json ",
+   "modules": {
+      "\\synth_top": {
+         "num_wires":         3438,
+         "num_wire_bits":     9613,
+         "num_pub_wires":     3438,
+         "num_pub_wire_bits": 9613,
+         "num_ports":         7,
+         "num_port_bits":     22,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5399,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$scopeinfo": 10,
+            "CCU2C": 199,
+            "DP16KD": 4,
+            "L6MUX21": 179,
+            "LUT4": 3259,
+            "MULT18X18D": 4,
+            "PFUMX": 530,
+            "TRELLIS_FF": 1214
+         }
+      }
+   },
+      "design": {
+         "num_wires":         3438,
+         "num_wire_bits":     9613,
+         "num_pub_wires":     3438,
+         "num_pub_wire_bits": 9613,
+         "num_ports":         7,
+         "num_port_bits":     22,
+         "num_memories":      0,
+         "num_memory_bits":   0,
+         "num_processes":     0,
+         "num_cells":         5399,
+         "num_submodules":       0,
+         "num_cells_by_type": {
+            "$scopeinfo": 10,
+            "CCU2C": 199,
+            "DP16KD": 4,
+            "L6MUX21": 179,
+            "LUT4": 3259,
+            "MULT18X18D": 4,
+            "PFUMX": 530,
+            "TRELLIS_FF": 1214
+         }
+      }
+}
+

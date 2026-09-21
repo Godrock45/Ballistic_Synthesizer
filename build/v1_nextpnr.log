@@ -1,0 +1,366 @@
+
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      2634/24288    10%
+Info:         logic LUTs:   2406/24288     9%
+Info:         carry LUTs:    228/24288     0%
+Info:           RAM LUTs:      0/ 3036     0%
+Info:          RAMW LUTs:      0/ 6072     0%
+
+Info:      Total DFFs:       355/24288     1%
+
+Info: Packing IOs..
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     281 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info: Checksum: 0xa5655a00
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:      19/    197     9%
+Info: 	                DCCA:       1/     56     1%
+Info: 	              DP16KD:       1/     56     1%
+Info: 	          MULT18X18D:       4/     28    14%
+Info: 	              ALU54B:       0/     14     0%
+Info: 	             EHXPLLL:       0/      2     0%
+Info: 	             EXTREFB:       0/      1     0%
+Info: 	                DCUA:       0/      1     0%
+Info: 	           PCSCLKDIV:       0/      2     0%
+Info: 	             IOLOGIC:       0/    128     0%
+Info: 	            SIOLOGIC:       0/     69     0%
+Info: 	                 GSR:       0/      1     0%
+Info: 	               JTAGG:       0/      1     0%
+Info: 	                OSCG:       0/      1     0%
+Info: 	               SEDGA:       0/      1     0%
+Info: 	                 DTR:       0/      1     0%
+Info: 	             USRMCLK:       0/      1     0%
+Info: 	             CLKDIVF:       0/      4     0%
+Info: 	           ECLKSYNCB:       0/     10     0%
+Info: 	             DLLDELD:       0/      8     0%
+Info: 	              DDRDLL:       0/      4     0%
+Info: 	             DQSBUFM:       0/      8     0%
+Info: 	     TRELLIS_ECLKBUF:       0/      8     0%
+Info: 	        ECLKBRIDGECS:       0/      2     0%
+Info: 	                DCSC:       0/      2     0%
+Info: 	          TRELLIS_FF:     355/  24288     1%
+Info: 	        TRELLIS_COMB:    2708/  24288    11%
+Info: 	        TRELLIS_RAMW:       0/   3036     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 1518 cells, random placement wirelen = 88904.
+Info:     at initial placer iter 0, wirelen = 1132
+Info:     at initial placer iter 1, wirelen = 1075
+Info:     at initial placer iter 2, wirelen = 1106
+Info:     at initial placer iter 3, wirelen = 1041
+Info: Running main analytical placer, max placement attempts per cell = 1191968.
+Info:     at iteration #1, type ALL: wirelen solved = 1039, spread = 13789, legal = 14105; time = 0.15s
+Info:     at iteration #2, type ALL: wirelen solved = 2376, spread = 9451, legal = 9997; time = 0.15s
+Info:     at iteration #3, type ALL: wirelen solved = 3259, spread = 8473, legal = 9353; time = 0.14s
+Info:     at iteration #4, type ALL: wirelen solved = 3730, spread = 8505, legal = 9223; time = 0.14s
+Info:     at iteration #5, type ALL: wirelen solved = 4061, spread = 8384, legal = 9170; time = 0.13s
+Info:     at iteration #6, type ALL: wirelen solved = 4485, spread = 7784, legal = 8808; time = 0.14s
+Info:     at iteration #7, type ALL: wirelen solved = 4619, spread = 7982, legal = 8833; time = 0.14s
+Info:     at iteration #8, type ALL: wirelen solved = 4889, spread = 7723, legal = 8785; time = 0.13s
+Info:     at iteration #9, type ALL: wirelen solved = 4926, spread = 7423, legal = 8601; time = 0.14s
+Info:     at iteration #10, type ALL: wirelen solved = 4993, spread = 7821, legal = 8965; time = 0.17s
+Info:     at iteration #11, type ALL: wirelen solved = 5125, spread = 7669, legal = 8912; time = 0.16s
+Info:     at iteration #12, type ALL: wirelen solved = 5256, spread = 7632, legal = 8663; time = 0.17s
+Info:     at iteration #13, type ALL: wirelen solved = 5256, spread = 7960, legal = 8737; time = 0.16s
+Info:     at iteration #14, type ALL: wirelen solved = 5389, spread = 8200, legal = 8862; time = 0.18s
+Info: HeAP Placer Time: 2.95s
+Info:   of which solving equations: 2.29s
+Info:   of which spreading cells: 0.18s
+Info:   of which strict legalisation: 0.07s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 736, wirelen = 8601
+Info:   at iteration #5: temp = 0.000000, timing cost = 711, wirelen = 7090
+Info:   at iteration #10: temp = 0.000000, timing cost = 668, wirelen = 6881
+Info:   at iteration #15: temp = 0.000000, timing cost = 661, wirelen = 6714
+Info:   at iteration #19: temp = 0.000000, timing cost = 685, wirelen = 6671 
+Info: SA placement time 9.32s
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 63.82 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 8.42 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 12.68 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [  4331,   5077) |*************+
+Info: [  5077,   5823) |************+
+Info: [  5823,   6569) | 
+Info: [  6569,   7315) | 
+Info: [  7315,   8061) | 
+Info: [  8061,   8807) | 
+Info: [  8807,   9553) | 
+Info: [  9553,  10299) |+
+Info: [ 10299,  11045) |*******+
+Info: [ 11045,  11791) |*******+
+Info: [ 11791,  12537) |*******************+
+Info: [ 12537,  13283) |***********+
+Info: [ 13283,  14029) |********+
+Info: [ 14029,  14775) |************+
+Info: [ 14775,  15521) |**********************+
+Info: [ 15521,  16267) |***************+
+Info: [ 16267,  17013) |************************************************************ 
+Info: [ 17013,  17759) |*******************************************************+
+Info: [ 17759,  18505) |*************************+
+Info: [ 18505,  19251) |*******+
+Info: Checksum: 0x232b3b99
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 11071 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      381        618 |  381   618 |     10659|       0.87       0.87|
+Info:       2000 |      610       1389 |  229   771 |     10164|       0.68       1.54|
+Info:       3000 |      828       2171 |  218   782 |      9513|       0.64       2.18|
+Info:       4000 |     1083       2916 |  255   745 |      8938|       0.63       2.81|
+Info:       5000 |     1298       3701 |  215   785 |      8208|       0.62       3.43|
+Info:       6000 |     1550       4449 |  252   748 |      7664|       0.65       4.07|
+Info:       7000 |     1783       5216 |  233   767 |      6957|       0.61       4.68|
+Info:       8000 |     2073       5926 |  290   710 |      6396|       0.96       5.65|
+Info:       9000 |     2249       6732 |  176   806 |      5633|       0.56       6.20|
+Info:      10000 |     2429       7418 |  180   686 |      4833|       0.41       6.61|
+Info:      11000 |     2627       8171 |  198   753 |      4051|       0.53       7.15|
+Info:      12000 |     2874       8916 |  247   745 |      3346|       0.58       7.73|
+Info:      13000 |     3063       9630 |  189   714 |      2552|       0.47       8.20|
+Info:      14000 |     3222      10292 |  159   662 |      1722|       0.40       8.60|
+Info:      15000 |     3326      11004 |  104   712 |       845|       0.43       9.03|
+Info:      15859 |     3334      11642 |    8   638 |         0|       0.54       9.57|
+Info: Routing complete.
+Info: Router1 time 9.57s
+Info: Checksum: 0x9cdcb6ad
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  0.52  0.52 Source w1.raw_sample_TRELLIS_FF_Q_10.Q
+Info:    routing  1.70  2.22 Net w1.raw_sample[10] (6,7) -> (9,13)
+Info:                          Sink w1.scaled_MULT18X18D_P9.B10
+Info:                          Defined in:
+Info:                               oscillator.sv:11.21-11.31
+Info:      logic  3.93  6.15 Source w1.scaled_MULT18X18D_P9.P25
+Info:    routing  1.84  7.99 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_8_ALUT_LUT4_Z_A_L6MUX21_Z_SD[1] (9,13) -> (9,3)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.B
+Info:                          Defined in:
+Info:                               control.sv:27.21-27.30
+Info:      logic  0.24  8.23 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.F
+Info:    routing  0.00  8.23 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT (9,3) -> (9,3)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.F1
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:141.30-141.32
+Info:      logic  0.17  8.39 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_BLUT_LUT4_Z.OFX
+Info:    routing  0.00  8.39 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1 (9,3) -> (9,3)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.FXB
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:141.38-141.40
+Info:      logic  0.24  8.63 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD_L6MUX21_Z_D1_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:    routing  0.97  9.61 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_SD[6] (9,3) -> (12,4)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.M
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.26  9.86 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A_L6MUX21_Z_D1_L6MUX21_Z_D0_PFUMX_Z_ALUT_LUT4_Z.OFX
+Info:    routing  1.15  11.01 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_12_ALUT_LUT4_Z_A[0] (12,4) -> (11,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.A
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.45  11.45 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCO
+Info:    routing  0.00  11.45 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_FCI_INT (11,7) -> (11,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCI
+Info:      logic  0.00  11.45 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCO
+Info:    routing  0.00  11.45 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT (11,7) -> (11,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               DSP.sv:12.9-12.23
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  11.53 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCO
+Info:    routing  0.00  11.53 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_FCI_INT (11,7) -> (11,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCI
+Info:      logic  0.00  11.53 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCO
+Info:    routing  0.00  11.53 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT (11,7) -> (11,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               DSP.sv:12.9-12.23
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  11.60 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCO
+Info:    routing  0.00  11.60 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_FCI_INT (11,7) -> (11,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCI
+Info:      logic  0.00  11.60 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCO
+Info:    routing  0.00  11.60 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT (11,7) -> (12,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               DSP.sv:12.9-12.23
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  11.67 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB0.FCO
+Info:    routing  0.00  11.67 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_FCI_INT (12,7) -> (12,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCI
+Info:      logic  0.00  11.67 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN$CCU2_COMB1.FCO
+Info:    routing  0.00  11.67 Net $nextpnr_CCU2C_30$CIN (12,7) -> (12,7)
+Info:                          Sink $nextpnr_CCU2C_30$CCU2_COMB0.FCI
+Info:      logic  0.44  12.11 Source $nextpnr_CCU2C_30$CCU2_COMB0.F
+Info:    routing  0.82  12.93 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A[2] (12,7) -> (12,7)
+Info:                          Sink $nextpnr_CCU2C_30$CCU2_COMB1.A
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.45  13.38 Source $nextpnr_CCU2C_30$CCU2_COMB1.FCO
+Info:    routing  0.00  13.38 Net $nextpnr_CCU2C_30$COUT (12,7) -> (12,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_S1$CCU2_COMB0.FCI
+Info:      logic  0.07  13.45 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_S1$CCU2_COMB0.FCO
+Info:    routing  0.00  13.45 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_S1$CCU2_FCI_INT (12,7) -> (12,7)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_S1$CCU2_COMB1.FCI
+Info:      logic  0.40  13.85 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A_CCU2C_A1_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_CIN_COUT_CCU2C_S1$CCU2_COMB1.F
+Info:    routing  0.68  14.53 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_LUT4_Z_1_A[3] (12,7) -> (12,6)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_10_BLUT_LUT4_Z.M
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.26  14.78 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI_PFUMX_Z_10_BLUT_LUT4_Z.OFX
+Info:    routing  0.37  15.15 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q_DI[10] (12,6) -> (12,6)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q.M
+Info:      setup  0.00  15.15 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_A0_TRELLIS_FF_Q.M
+Info: 7.63 ns logic, 7.52 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source rst$tr_io.O
+Info:    routing  4.87  4.87 Net rst$TRELLIS_IO_IN (72,11) -> (7,9)
+Info:                          Sink cho_or_no_d_TRELLIS_FF_DI_Q_CCU2C_S1_COUT_CCU2C_CIN_S0_LUT4_C_Z_LUT4_C_Z_LUT4_Z_1_D_TRELLIS_FF_DI_CE_LUT4_Z_D_LUT4_D_1_Z_TRELLIS_FF_CE_Q_CCU2C_A0_S1_CCU2C_S1_A0_TRELLIS_FF_Q.LSR
+Info:                          Defined in:
+Info:                               oscillator.sv:3.11-3.14
+Info:      setup  0.42  5.30 Source cho_or_no_d_TRELLIS_FF_DI_Q_CCU2C_S1_COUT_CCU2C_CIN_S0_LUT4_C_Z_LUT4_C_Z_LUT4_Z_1_D_TRELLIS_FF_DI_CE_LUT4_Z_D_LUT4_D_1_Z_TRELLIS_FF_CE_Q_CCU2C_A0_S1_CCU2C_S1_A0_TRELLIS_FF_Q.LSR
+Info: 0.42 ns logic, 4.87 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  0.52  0.52 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_B0_TRELLIS_FF_Q.Q
+Info:    routing  1.64  2.17 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_B0 (19,7) -> (14,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.B
+Info:      logic  0.45  2.62 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  2.62 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (14,8) -> (14,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  2.62 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  2.62 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (14,8) -> (14,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               mixer.sv:7.9-7.28
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  2.69 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  2.69 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (14,8) -> (14,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  2.69 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  2.69 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (14,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               mixer.sv:7.9-7.28
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  2.76 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  2.76 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  2.76 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  2.76 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               mixer.sv:7.9-7.28
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  2.83 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  2.83 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  2.83 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  2.83 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               mixer.sv:7.9-7.28
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  2.90 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  2.90 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  2.90 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  2.90 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               mixer.sv:7.9-7.28
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  2.97 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  2.97 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (15,8) -> (15,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  2.97 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  2.97 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_CIN (15,8) -> (16,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               mixer.sv:7.9-7.28
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  3.04 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  3.04 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT$CCU2_FCI_INT (16,8) -> (16,8)
+Info:                          Sink audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.40  3.45 Source audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT$CCU2_COMB1.F
+Info:    routing  1.99  5.44 Net audio_out_CCU2C_S1_6_B1_LUT4_Z_D_CCU2C_S0_CIN_CCU2C_COUT_S1[2] (16,8) -> (16,18)
+Info:                          Sink audio_out_CCU2C_S1_5_A1_LUT4_Z.D
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.24  5.68 Source audio_out_CCU2C_S1_5_A1_LUT4_Z.F
+Info:    routing  1.15  6.83 Net audio_out_CCU2C_S1_5_A1 (16,18) -> (16,19)
+Info:                          Sink audio_out_CCU2C_S1_5$CCU2_COMB1.A
+Info:      logic  0.45  7.28 Source audio_out_CCU2C_S1_5$CCU2_COMB1.FCO
+Info:    routing  0.00  7.28 Net audio_out_CCU2C_S1_5_COUT (16,19) -> (16,19)
+Info:                          Sink audio_out_CCU2C_S1_6$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  7.35 Source audio_out_CCU2C_S1_6$CCU2_COMB0.FCO
+Info:    routing  0.00  7.35 Net audio_out_CCU2C_S1_6$CCU2_FCI_INT (16,19) -> (16,19)
+Info:                          Sink audio_out_CCU2C_S1_6$CCU2_COMB1.FCI
+Info:      logic  0.40  7.75 Source audio_out_CCU2C_S1_6$CCU2_COMB1.F
+Info:    routing  3.62  11.37 Net audio_out[15]$TRELLIS_IO_OUT (16,19) -> (72,20)
+Info:                          Sink audio_out[15]$tr_io.I
+Info:                          Defined in:
+Info:                               mixer.sv:5.21-5.24
+Info: 2.96 ns logic, 8.41 ns routing
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 65.99 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 5.30 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 11.37 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 2 endpoint(s)
+Info:          + represents [1,2) endpoint(s)
+Info: [  4846,   5561) |********************+
+Info: [  5561,   6276) |*******+
+Info: [  6276,   6991) | 
+Info: [  6991,   7706) | 
+Info: [  7706,   8421) | 
+Info: [  8421,   9136) | 
+Info: [  9136,   9851) | 
+Info: [  9851,  10566) |+
+Info: [ 10566,  11281) |***+
+Info: [ 11281,  11996) |*************+
+Info: [ 11996,  12711) |****************+
+Info: [ 12711,  13426) |************+
+Info: [ 13426,  14141) |********+
+Info: [ 14141,  14856) |*************+
+Info: [ 14856,  15571) |*****************+
+Info: [ 15571,  16286) |**********************************+
+Info: [ 16286,  17001) |*****************************+
+Info: [ 17001,  17716) |*******************************************************+
+Info: [ 17716,  18431) |************************************************************ 
+Info: [ 18431,  19146) |*******+
+
+Info: Program finished normally.

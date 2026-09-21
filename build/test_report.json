@@ -1,0 +1,308 @@
+{
+  "suites": [
+    {
+      "name": "tuning",
+      "audio_seconds": 2.249979166666667,
+      "clocks": 3780004.0,
+      "wall_seconds": 101.25944290000189,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "35.000 clocks/sample, DAC density error -6.6e-07",
+          "metrics": {}
+        },
+        {
+          "name": "tuning, MIDI 36 (65.4 Hz)",
+          "passed": true,
+          "detail": "65.4064 Hz (+0.0007 cents)",
+          "metrics": {
+            "hz": 65.40641729789353,
+            "cents": 0.0006874693543397507
+          }
+        },
+        {
+          "name": "tuning, MIDI 45 (110.0 Hz)",
+          "passed": true,
+          "detail": "110.0000 Hz (-0.0000 cents)",
+          "metrics": {
+            "hz": 109.99999967008075,
+            "cents": -5.1924311447364875e-06
+          }
+        },
+        {
+          "name": "tuning, MIDI 57 (220.0 Hz)",
+          "passed": true,
+          "detail": "220.0000 Hz (+0.0000 cents)",
+          "metrics": {
+            "hz": 220.00000322654333,
+            "cents": 2.5390462074066156e-05
+          }
+        },
+        {
+          "name": "tuning, MIDI 60 (261.6 Hz)",
+          "passed": true,
+          "detail": "261.6256 Hz (-0.0000 cents)",
+          "metrics": {
+            "hz": 261.6255578768201,
+            "cents": -4.912477998310873e-05
+          }
+        },
+        {
+          "name": "tuning, MIDI 69 (440.0 Hz)",
+          "passed": true,
+          "detail": "440.0000 Hz (+0.0000 cents)",
+          "metrics": {
+            "hz": 440.00000455549633,
+            "cents": 1.7924159901612594e-05
+          }
+        },
+        {
+          "name": "tuning, MIDI 76 (659.3 Hz)",
+          "passed": true,
+          "detail": "659.2551 Hz (+0.0001 cents)",
+          "metrics": {
+            "hz": 659.2551359283988,
+            "cents": 5.8042591056451325e-05
+          }
+        },
+        {
+          "name": "tuning, MIDI 88 (1318.5 Hz)",
+          "passed": true,
+          "detail": "1318.5102 Hz (+0.0000 cents)",
+          "metrics": {
+            "hz": 1318.5102353951997,
+            "cents": 1.0167681459418437e-05
+          }
+        },
+        {
+          "name": "tuning, MIDI 100 (2637.0 Hz)",
+          "passed": true,
+          "detail": "2637.0204 Hz (-0.0000 cents)",
+          "metrics": {
+            "hz": 2637.0204493490064,
+            "cents": -3.908838386939367e-06
+          }
+        },
+        {
+          "name": "tuning, MIDI 112 (5274.0 Hz)",
+          "passed": true,
+          "detail": "5274.0409 Hz (-0.0000 cents)",
+          "metrics": {
+            "hz": 5274.040900744474,
+            "cents": -3.237075811385586e-06
+          }
+        }
+      ]
+    },
+    {
+      "name": "waveforms",
+      "audio_seconds": 2.0999791666666665,
+      "clocks": 3528004.0,
+      "wall_seconds": 95.51975580000726,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "35.000 clocks/sample, DAC density error -2.8e-07",
+          "metrics": {}
+        },
+        {
+          "name": "sine spectral purity, 880 Hz",
+          "passed": true,
+          "detail": "SFDR 95.5 dB, THD -100.4 dB, SINAD 87.4 dB, ENOB 14.22 bits",
+          "metrics": {
+            "sfdr_db": 95.54096828769174,
+            "thd_db": -100.39852919655877,
+            "sinad_db": 87.37358263674552,
+            "enob_bits": 14.221525354941118
+          }
+        },
+        {
+          "name": "square wave",
+          "passed": true,
+          "detail": "RMS 32639 (expected 32639 +/-1%), pitch -0.004 cents",
+          "metrics": {
+            "rms": 32639.000015319096,
+            "cents": -0.004471733987054871
+          }
+        },
+        {
+          "name": "saw wave",
+          "passed": true,
+          "detail": "RMS 18844 (expected 18844 +/-2%), pitch +0.000 cents",
+          "metrics": {
+            "rms": 18844.293465676044,
+            "cents": 2.4473817097784735e-05
+          }
+        },
+        {
+          "name": "triangle wave",
+          "passed": true,
+          "detail": "RMS 18844 (expected 18844 +/-2%), pitch +0.000 cents",
+          "metrics": {
+            "rms": 18844.327218906732,
+            "cents": 2.737782171740376e-05
+          }
+        },
+        {
+          "name": "noise wave",
+          "passed": true,
+          "detail": "RMS 18743 (expected 18844 +/-5%)",
+          "metrics": {
+            "rms": 18743.163883403042
+          }
+        }
+      ]
+    },
+    {
+      "name": "envelope",
+      "audio_seconds": 1.5999791666666667,
+      "clocks": 2688004.0,
+      "wall_seconds": 73.87929099999019,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "35.000 clocks/sample, DAC density error -6.8e-07",
+          "metrics": {}
+        },
+        {
+          "name": "ADSR envelope timing",
+          "passed": true,
+          "detail": "attack to 50% 248.1 ms (exp 250), sustain 17406 (exp 17407), release to 50% 79.1 ms (exp 80), silent after release: True",
+          "metrics": {
+            "attack_err_ms": -1.8958333333333428,
+            "release_err_ms": -0.9375,
+            "sustain_err": -6.911696824762892e-05
+          }
+        }
+      ]
+    },
+    {
+      "name": "polyphony",
+      "audio_seconds": 0.49997916666666664,
+      "clocks": 840004.0,
+      "wall_seconds": 22.72055339999497,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "35.000 clocks/sample, DAC density error -1.0e-06",
+          "metrics": {}
+        },
+        {
+          "name": "8-voice polyphony",
+          "passed": true,
+          "detail": "8 tones, worst amplitude error 0.01%, residual 0.01% of RMS",
+          "metrics": {
+            "worst_amp_err": 6.095411970485909e-05,
+            "residual_ratio": 0.00011208763925360105
+          }
+        }
+      ]
+    },
+    {
+      "name": "effects",
+      "audio_seconds": 0.9999791666666666,
+      "clocks": 1680004.0,
+      "wall_seconds": 45.207166400010465,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "35.000 clocks/sample, DAC density error -9.6e-07",
+          "metrics": {}
+        },
+        {
+          "name": "effect: cut (x0.5)",
+          "passed": true,
+          "detail": "RMS 11531 (expected 11539 +/-1%)",
+          "metrics": {
+            "rms": 11531.256058534993
+          }
+        },
+        {
+          "name": "effect: boost (x2)",
+          "passed": true,
+          "detail": "RMS 18088 (expected 18101 +/-1%)",
+          "metrics": {
+            "rms": 18088.263268968083
+          }
+        },
+        {
+          "name": "effect: drive (x4, hard clip)",
+          "passed": true,
+          "detail": "min -32768, max 32767, RMS 30958",
+          "metrics": {}
+        },
+        {
+          "name": "effect: 4-bit crush",
+          "passed": true,
+          "detail": "16 distinct levels",
+          "metrics": {}
+        },
+        {
+          "name": "effect: 4:1 compression above half scale",
+          "passed": true,
+          "detail": "peak 20447 (expected 20448)",
+          "metrics": {}
+        }
+      ]
+    },
+    {
+      "name": "control",
+      "audio_seconds": 1.0999791666666667,
+      "clocks": 1848004.0,
+      "wall_seconds": 48.90888449999329,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "35.000 clocks/sample, DAC density error -6.6e-07",
+          "metrics": {}
+        },
+        {
+          "name": "jump skips instructions",
+          "passed": true,
+          "detail": "0 non-zero samples",
+          "metrics": {}
+        },
+        {
+          "name": "WAIT timing and HALT",
+          "passed": true,
+          "detail": "halted at 1099.98 ms (program time 1100 ms)",
+          "metrics": {
+            "halt_err_ms": -0.020833333333257542
+          }
+        }
+      ]
+    },
+    {
+      "name": "realclock",
+      "audio_seconds": 0.05997916666666667,
+      "clocks": 3000004.0,
+      "wall_seconds": 49.07418689999031,
+      "checks": [
+        {
+          "name": "testbench invariants (sample clock, X, overrun, DAC)",
+          "passed": true,
+          "detail": "1041.667 clocks/sample, DAC density error -1.5e-07",
+          "metrics": {}
+        },
+        {
+          "name": "tuning with a real 50 MHz clock",
+          "passed": true,
+          "detail": "880.0000 Hz (+0.0000 cents)",
+          "metrics": {
+            "hz": 880.0000020144988,
+            "cents": 3.9631466441263346e-06
+          }
+        }
+      ]
+    }
+  ],
+  "passed": 31,
+  "failed": 0,
+  "wall_seconds": 747.0501846000116
+}

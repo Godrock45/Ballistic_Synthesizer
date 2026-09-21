@@ -1,0 +1,332 @@
+
+
+Info: Logic utilisation before packing:
+Info:     Total LUT4s:      3657/24288    15%
+Info:         logic LUTs:   3259/24288    13%
+Info:         carry LUTs:    398/24288     1%
+Info:           RAM LUTs:      0/ 3036     0%
+Info:          RAMW LUTs:      0/ 6072     0%
+
+Info:      Total DFFs:      1214/24288     4%
+
+Info: Packing IOs..
+Info: Packing constants..
+Info: Packing carries...
+Info: Packing LUTs...
+Info: Packing LUT5-7s...
+Info: Packing FFs...
+Info:     1106 FFs paired with LUTs.
+Info: Generating derived timing constraints...
+Info: Promoting globals...
+Info:     promoting clock net clk$TRELLIS_IO_IN to global network
+Info: Checksum: 0x567feccc
+
+Info: Device utilisation:
+Info: 	          TRELLIS_IO:      22/    197    11%
+Info: 	                DCCA:       1/     56     1%
+Info: 	              DP16KD:       4/     56     7%
+Info: 	          MULT18X18D:       4/     28    14%
+Info: 	              ALU54B:       0/     14     0%
+Info: 	             EHXPLLL:       0/      2     0%
+Info: 	             EXTREFB:       0/      1     0%
+Info: 	                DCUA:       0/      1     0%
+Info: 	           PCSCLKDIV:       0/      2     0%
+Info: 	             IOLOGIC:       0/    128     0%
+Info: 	            SIOLOGIC:       0/     69     0%
+Info: 	                 GSR:       0/      1     0%
+Info: 	               JTAGG:       0/      1     0%
+Info: 	                OSCG:       0/      1     0%
+Info: 	               SEDGA:       0/      1     0%
+Info: 	                 DTR:       0/      1     0%
+Info: 	             USRMCLK:       0/      1     0%
+Info: 	             CLKDIVF:       0/      4     0%
+Info: 	           ECLKSYNCB:       0/     10     0%
+Info: 	             DLLDELD:       0/      8     0%
+Info: 	              DDRDLL:       0/      4     0%
+Info: 	             DQSBUFM:       0/      8     0%
+Info: 	     TRELLIS_ECLKBUF:       0/      8     0%
+Info: 	        ECLKBRIDGECS:       0/      2     0%
+Info: 	                DCSC:       0/      2     0%
+Info: 	          TRELLIS_FF:    1214/  24288     4%
+Info: 	        TRELLIS_COMB:    3745/  24288    15%
+Info: 	        TRELLIS_RAMW:       0/   3036     0%
+
+Info: Placed 0 cells based on constraints.
+Info: Creating initial analytic placement for 2689 cells, random placement wirelen = 148039.
+Info:     at initial placer iter 0, wirelen = 2111
+Info:     at initial placer iter 1, wirelen = 1729
+Info:     at initial placer iter 2, wirelen = 1784
+Info:     at initial placer iter 3, wirelen = 1649
+Info: Running main analytical placer, max placement attempts per cell = 3112512.
+Info:     at iteration #1, type ALL: wirelen solved = 1555, spread = 24276, legal = 24995; time = 0.27s
+Info:     at iteration #2, type ALL: wirelen solved = 3324, spread = 19869, legal = 20862; time = 0.27s
+Info:     at iteration #3, type ALL: wirelen solved = 5165, spread = 18129, legal = 19804; time = 0.27s
+Info:     at iteration #4, type ALL: wirelen solved = 5852, spread = 15654, legal = 17873; time = 0.31s
+Info:     at iteration #5, type ALL: wirelen solved = 6483, spread = 13762, legal = 16697; time = 0.30s
+Info:     at iteration #6, type ALL: wirelen solved = 6695, spread = 13361, legal = 15836; time = 0.29s
+Info:     at iteration #7, type ALL: wirelen solved = 6846, spread = 13040, legal = 15196; time = 0.30s
+Info:     at iteration #8, type ALL: wirelen solved = 7201, spread = 12849, legal = 15685; time = 0.30s
+Info:     at iteration #9, type ALL: wirelen solved = 7453, spread = 12874, legal = 15549; time = 0.29s
+Info:     at iteration #10, type ALL: wirelen solved = 7567, spread = 12553, legal = 15366; time = 0.29s
+Info:     at iteration #11, type ALL: wirelen solved = 7691, spread = 12915, legal = 15380; time = 0.29s
+Info:     at iteration #12, type ALL: wirelen solved = 8023, spread = 12294, legal = 15381; time = 0.29s
+Info: HeAP Placer Time: 4.89s
+Info:   of which solving equations: 3.94s
+Info:   of which spreading cells: 0.29s
+Info:   of which strict legalisation: 0.13s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 1529, wirelen = 15196
+Info:   at iteration #5: temp = 0.000000, timing cost = 1265, wirelen = 13019
+Info:   at iteration #10: temp = 0.000000, timing cost = 1446, wirelen = 12604
+Info:   at iteration #15: temp = 0.000000, timing cost = 1467, wirelen = 12291
+Info:   at iteration #20: temp = 0.000000, timing cost = 1340, wirelen = 12198
+Info:   at iteration #25: temp = 0.000000, timing cost = 1327, wirelen = 12166
+Info:   at iteration #27: temp = 0.000000, timing cost = 1339, wirelen = 12151 
+Info: SA placement time 33.97s
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 48.39 MHz (FAIL at 50.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 8.42 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 5.09 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 9 endpoint(s)
+Info:          + represents [1,9) endpoint(s)
+Info: [  -665,    331) |**+
+Info: [   331,   1327) |************+
+Info: [  1327,   2323) |******+
+Info: [  2323,   3319) |**+
+Info: [  3319,   4315) |*+
+Info: [  4315,   5311) |+
+Info: [  5311,   6307) |***+
+Info: [  6307,   7303) |************+
+Info: [  7303,   8299) |******+
+Info: [  8299,   9295) |********+
+Info: [  9295,  10291) |****+
+Info: [ 10291,  11287) |*+
+Info: [ 11287,  12283) |****************+
+Info: [ 12283,  13279) |*****************************+
+Info: [ 13279,  14275) |************************************************************ 
+Info: [ 14275,  15271) |******************************************+
+Info: [ 15271,  16267) |*******************+
+Info: [ 16267,  17263) |************+
+Info: [ 17263,  18259) |**+
+Info: [ 18259,  19255) |**+
+Info: Checksum: 0xefacebc9
+Info: Routing globals...
+Info:     routing clock net $glbnet$clk$TRELLIS_IO_IN using global 0
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 16209 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:       1000 |      151        848 |  151   848 |     15370|       0.74       0.74|
+Info:       2000 |      310       1689 |  159   841 |     14781|       0.60       1.33|
+Info:       3000 |      582       2417 |  272   728 |     14096|       1.11       2.45|
+Info:       4000 |      793       3206 |  211   789 |     13360|       0.70       3.14|
+Info:       5000 |     1035       3964 |  242   758 |     12768|       0.98       4.13|
+Info:       6000 |     1290       4709 |  255   745 |     12117|       0.80       4.92|
+Info:       7000 |     1560       5439 |  270   730 |     11516|       0.68       5.60|
+Info:       8000 |     1850       6149 |  290   710 |     10874|       0.76       6.36|
+Info:       9000 |     2158       6841 |  308   692 |     10269|       0.75       7.11|
+Info:      10000 |     2447       7552 |  289   711 |      9636|       0.94       8.04|
+Info:      11000 |     2807       8192 |  360   640 |      9205|       0.76       8.81|
+Info:      12000 |     3174       8825 |  367   633 |      8638|       0.78       9.58|
+Info:      13000 |     3530       9469 |  356   644 |      8122|       0.87      10.45|
+Info:      14000 |     3790      10118 |  260   649 |      7548|       0.80      11.25|
+Info:      15000 |     4120      10682 |  330   564 |      6899|       0.53      11.78|
+Info:      16000 |     4597      11151 |  477   469 |      6449|       0.74      12.52|
+Info:      17000 |     5012      11678 |  415   527 |      5908|       0.64      13.16|
+Info:      18000 |     5280      12261 |  268   583 |      5212|       0.57      13.74|
+Info:      19000 |     5460      12962 |  180   701 |      4413|       0.44      14.17|
+Info:      20000 |     5694      13716 |  234   754 |      3658|       0.55      14.73|
+Info:      21000 |     5794      14558 |  100   842 |      2786|       0.35      15.08|
+Info:      22000 |     5961      15352 |  167   794 |      2186|       0.56      15.64|
+Info:      23000 |     6130      16183 |  169   831 |      1356|       0.45      16.09|
+Info:      24000 |     6200      17056 |   70   873 |       438|       1.09      17.17|
+Info:      24459 |     6216      17471 |   16   415 |         0|       0.55      17.72|
+Info: Routing complete.
+Info: Router1 time 17.72s
+Info: Checksum: 0xb07f12f7
+
+Info: Critical path report for clock '$glbnet$clk$TRELLIS_IO_IN' (posedge -> posedge):
+Info:       type curr  total name
+Info:   clk-to-q  5.61  5.61 Source engine.sin_lo.rom.0.0.DOA3
+Info:    routing  1.68  7.29 Net engine.sin_a_q[3] (26,25) -> (24,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_1$CCU2_COMB1.B
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:48.25-48.32
+Info:      logic  0.45  7.74 Source engine.sin_diff_CCU2C_S1_1$CCU2_COMB1.FCO
+Info:    routing  0.00  7.74 Net engine.sin_diff_CCU2C_S1_1_COUT (24,19) -> (24,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_3$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:77.20-77.37
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  7.81 Source engine.sin_diff_CCU2C_S1_3$CCU2_COMB0.FCO
+Info:    routing  0.00  7.81 Net engine.sin_diff_CCU2C_S1_3$CCU2_FCI_INT (24,19) -> (24,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_3$CCU2_COMB1.FCI
+Info:      logic  0.00  7.81 Source engine.sin_diff_CCU2C_S1_3$CCU2_COMB1.FCO
+Info:    routing  0.00  7.81 Net engine.sin_diff_CCU2C_S1_3_COUT (24,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_4$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:77.20-77.37
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  7.88 Source engine.sin_diff_CCU2C_S1_4$CCU2_COMB0.FCO
+Info:    routing  0.00  7.88 Net engine.sin_diff_CCU2C_S1_4$CCU2_FCI_INT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_4$CCU2_COMB1.FCI
+Info:      logic  0.00  7.88 Source engine.sin_diff_CCU2C_S1_4$CCU2_COMB1.FCO
+Info:    routing  0.00  7.88 Net engine.sin_diff_CCU2C_S1_4_COUT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_5$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:77.20-77.37
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  7.95 Source engine.sin_diff_CCU2C_S1_5$CCU2_COMB0.FCO
+Info:    routing  0.00  7.95 Net engine.sin_diff_CCU2C_S1_5$CCU2_FCI_INT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_5$CCU2_COMB1.FCI
+Info:      logic  0.00  7.95 Source engine.sin_diff_CCU2C_S1_5$CCU2_COMB1.FCO
+Info:    routing  0.00  7.95 Net engine.sin_diff_CCU2C_S1_5_COUT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_6$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:77.20-77.37
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  8.02 Source engine.sin_diff_CCU2C_S1_6$CCU2_COMB0.FCO
+Info:    routing  0.00  8.02 Net engine.sin_diff_CCU2C_S1_6$CCU2_FCI_INT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_6$CCU2_COMB1.FCI
+Info:      logic  0.00  8.02 Source engine.sin_diff_CCU2C_S1_6$CCU2_COMB1.FCO
+Info:    routing  0.00  8.02 Net engine.sin_diff_CCU2C_S1_6_COUT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:77.20-77.37
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  8.09 Source engine.sin_diff_CCU2C_S1$CCU2_COMB0.FCO
+Info:    routing  0.00  8.09 Net engine.sin_diff_CCU2C_S1$CCU2_FCI_INT (25,19) -> (25,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1$CCU2_COMB1.FCI
+Info:      logic  0.00  8.09 Source engine.sin_diff_CCU2C_S1$CCU2_COMB1.FCO
+Info:    routing  0.00  8.09 Net engine.sin_diff_CCU2C_S1_COUT (25,19) -> (26,19)
+Info:                          Sink engine.sin_diff_CCU2C_S1_7$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:77.20-77.37
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.44  8.53 Source engine.sin_diff_CCU2C_S1_7$CCU2_COMB0.F
+Info:    routing  1.42  9.95 Net engine.sin_diff[14] (26,19) -> (26,13)
+Info:                          Sink engine.sin_step_MULT18X18D_P9.A14
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:72.25-72.33
+Info:      logic  3.93  13.88 Source engine.sin_step_MULT18X18D_P9.P12
+Info:    routing  1.65  15.53 Net engine.sin_step[12] (26,13) -> (25,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.A
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:73.25-73.33
+Info:      logic  0.45  15.98 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  15.98 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (25,16) -> (25,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  15.98 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  15.98 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (25,16) -> (26,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:81.35-81.61
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  16.05 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  16.05 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (26,16) -> (26,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  16.05 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  16.05 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (26,16) -> (26,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:81.35-81.61
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  16.12 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  16.12 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (26,16) -> (26,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.00  16.12 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCO
+Info:    routing  0.00  16.12 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_CIN (26,16) -> (26,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:81.35-81.61
+Info:                               /share/lattice/arith_map_ccu2c.v:74.7-80.4
+Info:                               /share/lattice/ccu2c_sim.vh:9.9-9.13
+Info:      logic  0.07  16.19 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB0.FCO
+Info:    routing  0.00  16.19 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_FCI_INT (26,16) -> (26,16)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.FCI
+Info:      logic  0.40  16.59 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT$CCU2_COMB1.F
+Info:    routing  0.73  17.32 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1[1] (26,16) -> (27,17)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1_LUT4_B.B
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.24  17.55 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1_LUT4_B.F
+Info:    routing  0.59  18.15 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1_LUT4_B_Z[3] (27,17) -> (27,17)
+Info:                          Sink engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1_LUT4_B_Z_LUT4_D.D
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.24  18.38 Source engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1_LUT4_B_Z_LUT4_D.F
+Info:    routing  0.42  18.80 Net engine.osc_raw_LUT4_Z_2_D_LUT4_Z_D_LUT4_Z_B_CCU2C_S1_CIN_CCU2C_COUT_CIN_CCU2C_COUT_S1_LUT4_B_Z_LUT4_D_Z[3] (27,17) -> (27,17)
+Info:                          Sink engine.osc_raw_LUT4_Z_4.D
+Info:                          Defined in:
+Info:                               /share/lattice/cells_map_trellis.v:108.23-108.24
+Info:      logic  0.24  19.04 Source engine.osc_raw_LUT4_Z_4.F
+Info:    routing  0.13  19.17 Net engine.osc_raw[11] (27,17) -> (27,17)
+Info:                          Sink engine.osc_s_TRELLIS_FF_Q_11.DI
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:71.25-71.32
+Info:      setup  0.00  19.17 Source engine.osc_s_TRELLIS_FF_Q_11.DI
+Info: 12.55 ns logic, 6.62 ns routing
+
+Info: Critical path report for cross-domain path '<async>' -> 'posedge $glbnet$clk$TRELLIS_IO_IN':
+Info:       type curr  total name
+Info:     source  0.00  0.00 Source rst$tr_io.O
+Info:    routing  5.24  5.24 Net rst$TRELLIS_IO_IN (72,8) -> (11,23)
+Info:                          Sink engine.lvl_LUT4_Z_13_D_LUT4_Z_A_LUT4_B_Z_PFUMX_Z_10_C0_TRELLIS_FF_Q.LSR
+Info:                          Defined in:
+Info:                               rtl/sequencer.sv:10.34-10.37
+Info:      setup  0.42  5.66 Source engine.lvl_LUT4_Z_13_D_LUT4_Z_A_LUT4_B_Z_PFUMX_Z_10_C0_TRELLIS_FF_Q.LSR
+Info: 0.42 ns logic, 5.24 ns routing
+
+Info: Critical path report for cross-domain path 'posedge $glbnet$clk$TRELLIS_IO_IN' -> '<async>':
+Info:       type curr  total name
+Info:   clk-to-q  0.52  0.52 Source audio_TRELLIS_FF_Q_9.Q
+Info:    routing  2.95  3.48 Net audio[1]$TRELLIS_IO_OUT (30,19) -> (72,17)
+Info:                          Sink audio[1]$tr_io.I
+Info:                          Defined in:
+Info:                               rtl/voice_engine.sv:24.35-24.45
+Info: 0.52 ns logic, 2.95 ns routing
+
+Info: Max frequency for clock '$glbnet$clk$TRELLIS_IO_IN': 52.17 MHz (PASS at 50.00 MHz)
+
+Info: Max delay <async>                           -> posedge $glbnet$clk$TRELLIS_IO_IN: 5.66 ns
+Info: Max delay posedge $glbnet$clk$TRELLIS_IO_IN -> <async>                          : 3.48 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 9 endpoint(s)
+Info:          + represents [1,9) endpoint(s)
+Info: [   832,   1744) |*+
+Info: [  1744,   2656) |*+
+Info: [  2656,   3568) |********+
+Info: [  3568,   4480) |***********+
+Info: [  4480,   5392) |*+
+Info: [  5392,   6304) |+
+Info: [  6304,   7216) |**+
+Info: [  7216,   8128) |+
+Info: [  8128,   9040) |*******+
+Info: [  9040,   9952) |*************+
+Info: [  9952,  10864) |*********+
+Info: [ 10864,  11776) |***+
+Info: [ 11776,  12688) |******************+
+Info: [ 12688,  13600) |**************************+
+Info: [ 13600,  14512) |*************+
+Info: [ 14512,  15424) |****************************************+
+Info: [ 15424,  16336) |************************************************************ 
+Info: [ 16336,  17248) |********************+
+Info: [ 17248,  18160) |***+
+Info: [ 18160,  19072) |**+
+
+Info: Program finished normally.
